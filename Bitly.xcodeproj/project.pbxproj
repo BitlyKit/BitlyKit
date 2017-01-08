@@ -8,11 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2696C0031E1DE2BD003220F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2696C0021E1DE2BD003220F6 /* AppDelegate.swift */; };
-		2696C0051E1DE2BD003220F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2696C0041E1DE2BD003220F6 /* ViewController.swift */; };
+		2696C0051E1DE2BD003220F6 /* BitlyClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2696C0041E1DE2BD003220F6 /* BitlyClientViewController.swift */; };
 		2696C0081E1DE2BD003220F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2696C0061E1DE2BD003220F6 /* Main.storyboard */; };
 		2696C00A1E1DE2BD003220F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2696C0091E1DE2BD003220F6 /* Assets.xcassets */; };
 		2696C00D1E1DE2BD003220F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2696C00B1E1DE2BD003220F6 /* LaunchScreen.storyboard */; };
 		2696C0181E1DE2BD003220F6 /* BitlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2696C0171E1DE2BD003220F6 /* BitlyTests.swift */; };
+		2696C0301E1DE2D7003220F6 /* BitlyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2696C0271E1DE2D6003220F6 /* BitlyKit.framework */; };
+		2696C0371E1DE2D7003220F6 /* BitlyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2696C0361E1DE2D7003220F6 /* BitlyKitTests.swift */; };
+		2696C0391E1DE2D7003220F6 /* BitlyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2696C0291E1DE2D7003220F6 /* BitlyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2696C03C1E1DE2D7003220F6 /* BitlyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2696C0271E1DE2D6003220F6 /* BitlyKit.framework */; };
+		2696C03D1E1DE2D7003220F6 /* BitlyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2696C0271E1DE2D6003220F6 /* BitlyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26DF141A1E21F71C002ED3E2 /* BitlyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2696C0291E1DE2D7003220F6 /* BitlyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26DF141B1E21F71C002ED3E2 /* BitlyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2696C0291E1DE2D7003220F6 /* BitlyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26DF141C1E21F71E002ED3E2 /* BitlyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2696C0291E1DE2D7003220F6 /* BitlyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26DF14221E21F7C4002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
+		26DF14231E21F7C5002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
+		26DF14241E21F7C6002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
+		26DF14251E21F7C7002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +35,47 @@
 			remoteGlobalIDString = 2696BFFE1E1DE2BD003220F6;
 			remoteInfo = Bitly;
 		};
+		2696C0311E1DE2D7003220F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2696BFF71E1DE2BD003220F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2696C0261E1DE2D6003220F6;
+			remoteInfo = BitlyKit;
+		};
+		2696C0331E1DE2D7003220F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2696BFF71E1DE2BD003220F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2696BFFE1E1DE2BD003220F6;
+			remoteInfo = Bitly;
+		};
+		2696C03A1E1DE2D7003220F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2696BFF71E1DE2BD003220F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2696C0261E1DE2D6003220F6;
+			remoteInfo = BitlyKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2696C0411E1DE2D7003220F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2696C03D1E1DE2D7003220F6 /* BitlyKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2696BFFF1E1DE2BD003220F6 /* Bitly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2696C0021E1DE2BD003220F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2696C0041E1DE2BD003220F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2696C0041E1DE2BD003220F6 /* BitlyClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitlyClientViewController.swift; sourceTree = "<group>"; };
 		2696C0071E1DE2BD003220F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2696C0091E1DE2BD003220F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2696C00C1E1DE2BD003220F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +83,16 @@
 		2696C0131E1DE2BD003220F6 /* BitlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2696C0171E1DE2BD003220F6 /* BitlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitlyTests.swift; sourceTree = "<group>"; };
 		2696C0191E1DE2BD003220F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2696C0271E1DE2D6003220F6 /* BitlyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitlyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2696C0291E1DE2D7003220F6 /* BitlyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitlyKit.h; sourceTree = "<group>"; };
+		2696C02A1E1DE2D7003220F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2696C02F1E1DE2D7003220F6 /* BitlyKitTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BitlyKitTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2696C0361E1DE2D7003220F6 /* BitlyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitlyKitTests.swift; sourceTree = "<group>"; };
+		2696C0381E1DE2D7003220F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26DF13A41E21F61C002ED3E2 /* BitlyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitlyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DF13E91E21F66A002ED3E2 /* BitlyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitlyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DF14121E21F6A5002ED3E2 /* BitlyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitlyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitlyClient.swift; path = Source/BitlyClient.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,10 +100,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2696C03C1E1DE2D7003220F6 /* BitlyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2696C0101E1DE2BD003220F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2696C0231E1DE2D6003220F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2696C02C1E1DE2D7003220F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2696C0301E1DE2D7003220F6 /* BitlyKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13A01E21F61C002ED3E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13E51E21F66A002ED3E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF140E1E21F6A5002ED3E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +155,8 @@
 			children = (
 				2696C0011E1DE2BD003220F6 /* Bitly */,
 				2696C0161E1DE2BD003220F6 /* BitlyTests */,
+				2696C0281E1DE2D7003220F6 /* BitlyKit */,
+				2696C0351E1DE2D7003220F6 /* BitlyKitTests */,
 				2696C0001E1DE2BD003220F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +166,11 @@
 			children = (
 				2696BFFF1E1DE2BD003220F6 /* Bitly.app */,
 				2696C0131E1DE2BD003220F6 /* BitlyTests.xctest */,
+				2696C0271E1DE2D6003220F6 /* BitlyKit.framework */,
+				2696C02F1E1DE2D7003220F6 /* BitlyKitTests-iOS.xctest */,
+				26DF13A41E21F61C002ED3E2 /* BitlyKit.framework */,
+				26DF13E91E21F66A002ED3E2 /* BitlyKit.framework */,
+				26DF14121E21F6A5002ED3E2 /* BitlyKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,10 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				2696C0021E1DE2BD003220F6 /* AppDelegate.swift */,
-				2696C0041E1DE2BD003220F6 /* ViewController.swift */,
+				2696C0041E1DE2BD003220F6 /* BitlyClientViewController.swift */,
 				2696C0061E1DE2BD003220F6 /* Main.storyboard */,
-				2696C0091E1DE2BD003220F6 /* Assets.xcassets */,
 				2696C00B1E1DE2BD003220F6 /* LaunchScreen.storyboard */,
+				2696C0091E1DE2BD003220F6 /* Assets.xcassets */,
 				2696C00E1E1DE2BD003220F6 /* Info.plist */,
 			);
 			path = Bitly;
@@ -96,7 +197,61 @@
 			path = BitlyTests;
 			sourceTree = "<group>";
 		};
+		2696C0281E1DE2D7003220F6 /* BitlyKit */ = {
+			isa = PBXGroup;
+			children = (
+				2696C0291E1DE2D7003220F6 /* BitlyKit.h */,
+				2696C02A1E1DE2D7003220F6 /* Info.plist */,
+				26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */,
+			);
+			path = BitlyKit;
+			sourceTree = "<group>";
+		};
+		2696C0351E1DE2D7003220F6 /* BitlyKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2696C0361E1DE2D7003220F6 /* BitlyKitTests.swift */,
+				2696C0381E1DE2D7003220F6 /* Info.plist */,
+			);
+			path = BitlyKitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2696C0241E1DE2D6003220F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2696C0391E1DE2D7003220F6 /* BitlyKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13A11E21F61C002ED3E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF141A1E21F71C002ED3E2 /* BitlyKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13E61E21F66A002ED3E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF141B1E21F71C002ED3E2 /* BitlyKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF140F1E21F6A5002ED3E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF141C1E21F71E002ED3E2 /* BitlyKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2696BFFE1E1DE2BD003220F6 /* Bitly */ = {
@@ -106,10 +261,13 @@
 				2696BFFB1E1DE2BD003220F6 /* Sources */,
 				2696BFFC1E1DE2BD003220F6 /* Frameworks */,
 				2696BFFD1E1DE2BD003220F6 /* Resources */,
+				2696C0411E1DE2D7003220F6 /* Embed Frameworks */,
+				26DF14261E21FADE002ED3E2 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2696C03B1E1DE2D7003220F6 /* PBXTargetDependency */,
 			);
 			name = Bitly;
 			productName = Bitly;
@@ -134,6 +292,97 @@
 			productReference = 2696C0131E1DE2BD003220F6 /* BitlyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2696C0261E1DE2D6003220F6 /* BitlyKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2696C03E1E1DE2D7003220F6 /* Build configuration list for PBXNativeTarget "BitlyKit-iOS" */;
+			buildPhases = (
+				2696C0221E1DE2D6003220F6 /* Sources */,
+				2696C0231E1DE2D6003220F6 /* Frameworks */,
+				2696C0241E1DE2D6003220F6 /* Headers */,
+				2696C0251E1DE2D6003220F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BitlyKit-iOS";
+			productName = BitlyKit;
+			productReference = 2696C0271E1DE2D6003220F6 /* BitlyKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2696C02E1E1DE2D7003220F6 /* BitlyKitTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2696C0421E1DE2D7003220F6 /* Build configuration list for PBXNativeTarget "BitlyKitTests-iOS" */;
+			buildPhases = (
+				2696C02B1E1DE2D7003220F6 /* Sources */,
+				2696C02C1E1DE2D7003220F6 /* Frameworks */,
+				2696C02D1E1DE2D7003220F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2696C0321E1DE2D7003220F6 /* PBXTargetDependency */,
+				2696C0341E1DE2D7003220F6 /* PBXTargetDependency */,
+			);
+			name = "BitlyKitTests-iOS";
+			productName = BitlyKitTests;
+			productReference = 2696C02F1E1DE2D7003220F6 /* BitlyKitTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26DF13A31E21F61C002ED3E2 /* BitlyKit-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DF13B51E21F61C002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-macOS" */;
+			buildPhases = (
+				26DF139F1E21F61C002ED3E2 /* Sources */,
+				26DF13A01E21F61C002ED3E2 /* Frameworks */,
+				26DF13A11E21F61C002ED3E2 /* Headers */,
+				26DF13A21E21F61C002ED3E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BitlyKit-macOS";
+			productName = "BitlyKit-macOS";
+			productReference = 26DF13A41E21F61C002ED3E2 /* BitlyKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26DF13E81E21F66A002ED3E2 /* BitlyKit-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DF13FA1E21F66A002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-tvOS" */;
+			buildPhases = (
+				26DF13E41E21F66A002ED3E2 /* Sources */,
+				26DF13E51E21F66A002ED3E2 /* Frameworks */,
+				26DF13E61E21F66A002ED3E2 /* Headers */,
+				26DF13E71E21F66A002ED3E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BitlyKit-tvOS";
+			productName = "BitlyKit-tvOS";
+			productReference = 26DF13E91E21F66A002ED3E2 /* BitlyKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26DF14111E21F6A5002ED3E2 /* BitlyKit-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DF14171E21F6A5002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-watchOS" */;
+			buildPhases = (
+				26DF140D1E21F6A5002ED3E2 /* Sources */,
+				26DF140E1E21F6A5002ED3E2 /* Frameworks */,
+				26DF140F1E21F6A5002ED3E2 /* Headers */,
+				26DF14101E21F6A5002ED3E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BitlyKit-watchOS";
+			productName = "BitlyKit-watchOS";
+			productReference = 26DF14121E21F6A5002ED3E2 /* BitlyKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -155,6 +404,33 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2696BFFE1E1DE2BD003220F6;
 					};
+					2696C0261E1DE2D6003220F6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M3FCT79SM9;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					2696C02E1E1DE2D7003220F6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M3FCT79SM9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2696BFFE1E1DE2BD003220F6;
+					};
+					26DF13A31E21F61C002ED3E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M3FCT79SM9;
+						ProvisioningStyle = Automatic;
+					};
+					26DF13E81E21F66A002ED3E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M3FCT79SM9;
+						ProvisioningStyle = Automatic;
+					};
+					26DF14111E21F6A5002ED3E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M3FCT79SM9;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 2696BFFA1E1DE2BD003220F6 /* Build configuration list for PBXProject "Bitly" */;
@@ -172,6 +448,11 @@
 			targets = (
 				2696BFFE1E1DE2BD003220F6 /* Bitly */,
 				2696C0121E1DE2BD003220F6 /* BitlyTests */,
+				2696C0261E1DE2D6003220F6 /* BitlyKit-iOS */,
+				2696C02E1E1DE2D7003220F6 /* BitlyKitTests-iOS */,
+				26DF13A31E21F61C002ED3E2 /* BitlyKit-macOS */,
+				26DF13E81E21F66A002ED3E2 /* BitlyKit-tvOS */,
+				26DF14111E21F6A5002ED3E2 /* BitlyKit-watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -194,14 +475,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2696C0251E1DE2D6003220F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2696C02D1E1DE2D7003220F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13A21E21F61C002ED3E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13E71E21F66A002ED3E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF14101E21F6A5002ED3E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26DF14261E21FADE002ED3E2 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/scripts/swiftlint.sh\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2696BFFB1E1DE2BD003220F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2696C0051E1DE2BD003220F6 /* ViewController.swift in Sources */,
+				2696C0051E1DE2BD003220F6 /* BitlyClientViewController.swift in Sources */,
 				2696C0031E1DE2BD003220F6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +548,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2696C0221E1DE2D6003220F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF14221E21F7C4002ED3E2 /* BitlyClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2696C02B1E1DE2D7003220F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2696C0371E1DE2D7003220F6 /* BitlyKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF139F1E21F61C002ED3E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF14231E21F7C5002ED3E2 /* BitlyClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF13E41E21F66A002ED3E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF14241E21F7C6002ED3E2 /* BitlyClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DF140D1E21F6A5002ED3E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DF14251E21F7C7002ED3E2 /* BitlyClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -221,6 +595,21 @@
 			isa = PBXTargetDependency;
 			target = 2696BFFE1E1DE2BD003220F6 /* Bitly */;
 			targetProxy = 2696C0141E1DE2BD003220F6 /* PBXContainerItemProxy */;
+		};
+		2696C0321E1DE2D7003220F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2696C0261E1DE2D6003220F6 /* BitlyKit-iOS */;
+			targetProxy = 2696C0311E1DE2D7003220F6 /* PBXContainerItemProxy */;
+		};
+		2696C0341E1DE2D7003220F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2696BFFE1E1DE2BD003220F6 /* Bitly */;
+			targetProxy = 2696C0331E1DE2D7003220F6 /* PBXContainerItemProxy */;
+		};
+		2696C03B1E1DE2D7003220F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2696C0261E1DE2D6003220F6 /* BitlyKit-iOS */;
+			targetProxy = 2696C03A1E1DE2D7003220F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -284,7 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -328,7 +717,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -340,9 +729,11 @@
 		2696C01D1E1DE2BD003220F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = Bitly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.Bitly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,9 +744,11 @@
 		2696C01E1E1DE2BD003220F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = Bitly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.Bitly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +786,237 @@
 			};
 			name = Release;
 		};
+		2696C03F1E1DE2D7003220F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BitlyKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2696C0401E1DE2D7003220F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BitlyKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2696C0431E1DE2D7003220F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				INFOPLIST_FILE = BitlyKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitly.app/Bitly";
+			};
+			name = Debug;
+		};
+		2696C0441E1DE2D7003220F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				INFOPLIST_FILE = BitlyKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitly.app/Bitly";
+			};
+			name = Release;
+		};
+		26DF13B61E21F61C002ED3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/BitlyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26DF13B71E21F61C002ED3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/BitlyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26DF13FB1E21F66A002ED3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/BitlyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26DF13FC1E21F66A002ED3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/BitlyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26DF14181E21F6A5002ED3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/BitlyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		26DF14191E21F6A5002ED3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/BitlyKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.BitlyKit;
+				PRODUCT_NAME = BitlyKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -412,12 +1036,56 @@
 				2696C01E1E1DE2BD003220F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2696C01F1E1DE2BD003220F6 /* Build configuration list for PBXNativeTarget "BitlyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2696C0201E1DE2BD003220F6 /* Debug */,
 				2696C0211E1DE2BD003220F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2696C03E1E1DE2D7003220F6 /* Build configuration list for PBXNativeTarget "BitlyKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2696C03F1E1DE2D7003220F6 /* Debug */,
+				2696C0401E1DE2D7003220F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2696C0421E1DE2D7003220F6 /* Build configuration list for PBXNativeTarget "BitlyKitTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2696C0431E1DE2D7003220F6 /* Debug */,
+				2696C0441E1DE2D7003220F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26DF13B51E21F61C002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DF13B61E21F61C002ED3E2 /* Debug */,
+				26DF13B71E21F61C002ED3E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26DF13FA1E21F66A002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DF13FB1E21F66A002ED3E2 /* Debug */,
+				26DF13FC1E21F66A002ED3E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26DF14171E21F6A5002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DF14181E21F6A5002ED3E2 /* Debug */,
+				26DF14191E21F6A5002ED3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

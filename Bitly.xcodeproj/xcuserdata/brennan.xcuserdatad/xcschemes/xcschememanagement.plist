@@ -4,10 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bitly.xcscheme</key>
+		<key>Bitly.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>BitlyKit-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>BitlyKit-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>BitlyKit-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>BitlyKit-watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +38,71 @@
 			<true/>
 		</dict>
 		<key>2696C0121E1DE2BD003220F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2696C0261E1DE2D6003220F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2696C02E1E1DE2D7003220F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13811E21F5C8002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13891E21F5C8002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13A31E21F61C002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13AB1E21F61C002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13BF1E21F63A002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13CC1E21F651002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13D41E21F651002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13E81E21F66A002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF13F01E21F66A002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF14041E21F68B002ED3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26DF14111E21F6A5002ED3E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
