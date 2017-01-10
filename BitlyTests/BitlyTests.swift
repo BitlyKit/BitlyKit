@@ -30,6 +30,8 @@ class BitlyTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - Integration Tests (Requires Credentials) -
+
     func testRequiredUserDefaults() {
         guard let _ = username,
             let _ = apiKey,
@@ -52,7 +54,7 @@ class BitlyTests: XCTestCase {
         _ = BitlyClient.shorten(url: url, username: username, apiKey: apiKey) { (shortenedURL, error) in
             XCTAssertNotNil(shortenedURL)
             XCTAssertNil(error)
-            _ = BitlyClient.expand(shortenedURL, username: self.username, apiKey: self.apiKey, completionHandler: { (expandedURL, error) in
+            _ = BitlyClient.expand(url: shortenedURL, username: self.username, apiKey: self.apiKey, completionHandler: { (expandedURL, error) in
                 XCTAssertNotNil(expandedURL)
                 XCTAssertNil(error)
                 expectation.fulfill()
@@ -76,7 +78,7 @@ class BitlyTests: XCTestCase {
         let expectation = self.expectation(description: "Bitly")
         let url = URL(string: "https://encrypted.google.com/search?hl=en&q=bitly")
 
-        _ = BitlyClient.shorten(url, accessToken: accessToken) { (shortenedURL, error) in
+        _ = BitlyClient.shorten(url: url, accessToken: accessToken) { (shortenedURL, error) in
             XCTAssertNotNil(shortenedURL)
             XCTAssertNil(error)
             _ = BitlyClient.expand(url: shortenedURL, accessToken: self.accessToken, completionHandler: { (expandedURL, error) in

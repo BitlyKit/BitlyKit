@@ -89,6 +89,9 @@ public enum BitlyError : Int {
 
 }
 
+/** Bitly JSON Dictionary */
+public typealias BitlyJSONDictionary = [String : Any]
+
 /// Bitly Client for shortening and expanding URLs.
 open class BitlyClient : NSObject {
 
@@ -101,7 +104,7 @@ open class BitlyClient : NSObject {
     ///   - accessToken: access token
     ///   - completionHandler: completion handler
     /// - Returns: task
-    public class func shorten(_ url: URL?, accessToken: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    public class func shorten(url: URL?, accessToken: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
         guard let completionHandler = completionHandler else {
             return nil
         }
@@ -119,7 +122,7 @@ open class BitlyClient : NSObject {
             BitlyFormatParameter: BitlyFormat
         ]
 
-        return shorten(url, parameters: parameters, completionHandler: completionHandler)
+        return shorten(url: url, parameters: parameters, completionHandler: completionHandler)
     }
 
     /// Shorten URL using username and API key.
@@ -149,7 +152,7 @@ open class BitlyClient : NSObject {
             BitlyFormatParameter: BitlyFormat
         ]
 
-        return shorten(url, parameters: parameters, completionHandler: completionHandler)
+        return shorten(url: url, parameters: parameters, completionHandler: completionHandler)
     }
 
     /// Expand URL with access token.
@@ -176,7 +179,7 @@ open class BitlyClient : NSObject {
             BitlyFormatParameter: BitlyFormat
         ]
 
-        return expand(url, parameters: parameters, completionHandler: completionHandler)
+        return expand(url: url, parameters: parameters, completionHandler: completionHandler)
     }
 
     /// Expand URL using username and API key.
@@ -187,7 +190,7 @@ open class BitlyClient : NSObject {
     ///   - apiKey: API key
     ///   - completionHandler: completion handler
     /// - Returns: task
-    public class func expand(_ url: URL?, username: String?, apiKey: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    public class func expand(url: URL?, username: String?, apiKey: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
         guard let completionHandler = completionHandler else {
             return nil
         }
@@ -206,12 +209,12 @@ open class BitlyClient : NSObject {
             BitlyFormatParameter: BitlyFormat
         ]
 
-        return expand(url, parameters: parameters, completionHandler: completionHandler)
+        return expand(url: url, parameters: parameters, completionHandler: completionHandler)
     }
 
-    // MARK: - Internal -
+    // MARK: - Private -
 
-    internal class func shorten(_ url: URL, parameters: [AnyHashable : Any], completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    private class func shorten(url: URL, parameters: [AnyHashable : Any], completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
         guard let completionHandler = completionHandler else {
             return nil
         }
@@ -227,7 +230,7 @@ open class BitlyClient : NSObject {
                 completionHandler(nil, error)
             }
             else {
-                guard let jsonDictionary = json as? [String:Any] else {
+                guard let jsonDictionary = json as? BitlyJSONDictionary else {
                     let error = prepareError(bitlyError: .unexpectedResponse)
                     completionHandler(nil, error)
                     return
@@ -235,7 +238,7 @@ open class BitlyClient : NSObject {
 
                 if let status = jsonDictionary[BitlyStatusTextKey] as? String,
                     status == BitlyStatusOK,
-                    let dataDictionary = jsonDictionary[BitlyDataKey] as? [String:Any],
+                    let dataDictionary = jsonDictionary[BitlyDataKey] as? BitlyJSONDictionary,
                     let shortenedUrlString = dataDictionary[BitlyURLKey] as? String,
                     let shortenedURL = URL(string: shortenedUrlString) {
                     completionHandler(shortenedURL, nil)
@@ -251,7 +254,7 @@ open class BitlyClient : NSObject {
         }
     }
 
-    internal class func expand(_ url: URL, parameters: [AnyHashable : Any], completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    private class func expand(url: URL, parameters: [AnyHashable : Any], completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
 
         guard let completionHandler = completionHandler else {
             return nil
@@ -268,7 +271,7 @@ open class BitlyClient : NSObject {
                 completionHandler(nil, error)
             }
             else {
-                guard let jsonDictionary = json as? [String:Any] else {
+                guard let jsonDictionary = json as? BitlyJSONDictionary else {
                     let error = prepareError(bitlyError: .unexpectedResponse)
                     completionHandler(nil, error)
                     return
@@ -276,8 +279,8 @@ open class BitlyClient : NSObject {
 
                 if let status = jsonDictionary[BitlyStatusTextKey] as? String,
                     status == BitlyStatusOK,
-                    let dataDictionary = jsonDictionary[BitlyDataKey] as? [String:Any],
-                    let expandedDictionaries = dataDictionary[BitlyExpandKey] as? [[String:Any]],
+                    let dataDictionary = jsonDictionary[BitlyDataKey] as? BitlyJSONDictionary,
+                    let expandedDictionaries = dataDictionary[BitlyExpandKey] as? [BitlyJSONDictionary],
                     let expandedUrlString = expandedDictionaries.first?[BitlyLongURLKey] as? String,
                     let expandedURL = URL(string: expandedUrlString) {
                     completionHandler(expandedURL, nil)
@@ -292,7 +295,9 @@ open class BitlyClient : NSObject {
         }
     }
 
-    internal class func extractAPIError(jsonDictionary: [String:Any]) -> NSError? {
+    // MARK: - Internal -
+
+    internal class func extractAPIError(jsonDictionary: BitlyJSONDictionary) -> NSError? {
         guard let statusText = jsonDictionary[BitlyStatusTextKey] as? String,
             let statusCode = jsonDictionary[BitlyStatusCodeKey] as? Int,
             statusCode != 200 else {
@@ -310,7 +315,7 @@ open class BitlyClient : NSObject {
 
         debugPrint("Parameters: \(parameters)")
 
-        guard let url = appendQueryParameters(parameters, to: url) else {
+        guard let url = appendQueryParameters(parameters: parameters, to: url) else {
             fatalError("URL must be defined.")
         }
 
@@ -349,11 +354,11 @@ open class BitlyClient : NSObject {
         return task
     }
 
-    internal class func appendQueryParameters(_ params: [AnyHashable : Any], to url: URL) -> URL? {
+    internal class func appendQueryParameters(parameters: [AnyHashable : Any], to url: URL) -> URL? {
         guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return nil
         }
-        components.queryItems = params.flatMap { (name, value) in
+        components.queryItems = parameters.flatMap { (name, value) in
             if let name = name as? String {
                 let value = String(describing: value)
                 return URLQueryItem(name: name, value: value)

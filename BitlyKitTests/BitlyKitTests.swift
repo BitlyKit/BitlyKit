@@ -65,9 +65,18 @@ class BitlyKitTests: XCTestCase {
 
         let expectation = self.expectation(description: "Bitly")
         BitlyTestClient.json = json
-        _ = BitlyTestClient.shorten(fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
+        _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(url)
             XCTAssertNil(error)
+
+            guard let url = url else {
+                XCTFail()
+                expectation.fulfill()
+                return
+            }
+
+            XCTAssertEqual(url.absoluteString, "http://sstools.co/2iWad1L")
+
             expectation.fulfill()
         }
 
@@ -84,7 +93,7 @@ class BitlyKitTests: XCTestCase {
 
         let expectation = self.expectation(description: "Bitly")
         BitlyTestClient.json = json
-        _ = BitlyTestClient.shorten(fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
+        _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNil(url)
             XCTAssertNotNil(error)
             let errorType = BitlyError.errorType(error: error)
@@ -105,7 +114,7 @@ class BitlyKitTests: XCTestCase {
 
         let expectation = self.expectation(description: "Bitly")
         BitlyTestClient.json = json
-        _ = BitlyTestClient.shorten(fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
+        _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNil(url)
             XCTAssertNotNil(error)
             let errorType = BitlyError.errorType(error: error)
@@ -126,7 +135,7 @@ class BitlyKitTests: XCTestCase {
 
         let expectation = self.expectation(description: "Bitly")
         BitlyTestClient.json = json
-        _ = BitlyTestClient.shorten(fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
+        _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNil(url)
             XCTAssertNotNil(error)
             let errorType = BitlyError.errorType(error: error)
@@ -141,7 +150,7 @@ class BitlyKitTests: XCTestCase {
 
     func testShortenWithIncompleteAccessTokenParameters() {
         let expectation = self.expectation(description: "Bitly")
-        _ = BitlyClient.shorten(nil, accessToken: nil) { (url, error) in
+        _ = BitlyClient.shorten(url: nil, accessToken: nil) { (url, error) in
             XCTAssertNil(url)
             XCTAssertNotNil(error)
             let errorType = BitlyError.errorType(error: error)
@@ -173,7 +182,7 @@ class BitlyKitTests: XCTestCase {
         let expectation = self.expectation(description: "Bitly")
 
         BitlyTestClient.error = BitlyTestClient.prepareError(bitlyError: .failureToShortenURL)
-        _ = BitlyTestClient.shorten(fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
+        _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(error)
             XCTAssertNil(url)
             expectation.fulfill()
@@ -182,6 +191,11 @@ class BitlyKitTests: XCTestCase {
         self.waitForExpectations(timeout: 3.0) { (error) in
             XCTAssertNil(error)
         }
+    }
+
+    func testShorteningWithoutCompletionHandler() {
+        let task = BitlyClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken, completionHandler: nil)
+        XCTAssertNil(task)
     }
 
     // MARK: - Expand Tests -
@@ -197,6 +211,15 @@ class BitlyKitTests: XCTestCase {
         _ = BitlyTestClient.expand(url: fakeShortURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(url)
             XCTAssertNil(error)
+
+            guard let url = url else {
+                XCTFail()
+                expectation.fulfill()
+                return
+            }
+
+            XCTAssertEqual(url.absoluteString, "https://en.wikipedia.org/wiki/Richard_Feynman")
+
             expectation.fulfill()
         }
 
@@ -285,7 +308,7 @@ class BitlyKitTests: XCTestCase {
 
     func testExpandWithIncompleteUsernameAndApiKeyParameters() {
         let expectation = self.expectation(description: "Bitly")
-        _ = BitlyClient.expand(nil, username: nil, apiKey: nil) { (url, error) in
+        _ = BitlyClient.expand(url: nil, username: nil, apiKey: nil) { (url, error) in
             XCTAssertNil(url)
             XCTAssertNotNil(error)
             let errorType = BitlyError.errorType(error: error)
@@ -302,7 +325,7 @@ class BitlyKitTests: XCTestCase {
         let expectation = self.expectation(description: "Bitly")
 
         BitlyTestClient.error = BitlyTestClient.prepareError(bitlyError: .failureToExpandURL)
-        _ = BitlyTestClient.shorten(fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
+        _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(error)
             XCTAssertNil(url)
             expectation.fulfill()
@@ -311,6 +334,11 @@ class BitlyKitTests: XCTestCase {
         self.waitForExpectations(timeout: 3.0) { (error) in
             XCTAssertNil(error)
         }
+    }
+
+    func testExpandingWithoutCompletionHandler() {
+        let task = BitlyClient.expand(url: fakeShortURL, accessToken: fakeAccessToken, completionHandler: nil)
+        XCTAssertNil(task)
     }
 
 }

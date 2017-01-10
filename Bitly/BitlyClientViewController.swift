@@ -42,7 +42,7 @@ class BitlyClientViewController: UIViewController {
         saveSettings()
 
         let url = URL(string: urlString)
-        _ = BitlyClient.shorten(url, accessToken: accessTokenTextField.text) {
+        _ = BitlyClient.shorten(url: url, accessToken: accessTokenTextField.text) {
             [weak self] (url, error) in
             if let error = error {
                 debugPrint("Error: \(error.localizedDescription)")
