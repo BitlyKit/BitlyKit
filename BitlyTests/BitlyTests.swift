@@ -40,10 +40,16 @@ class BitlyTests: XCTestCase {
     }
 
     func testAPIKeyShrinkAndExpand() {
+        guard let username = username,
+            let apiKey = apiKey else {
+                XCTFail()
+                return
+        }
+
         let expectation = self.expectation(description: "Bitly")
         let url = URL(string: "https://encrypted.google.com/search?hl=en&q=bitly")
 
-        _ = BitlyClient.shorten(url, username: username, apiKey: apiKey) { (shortenedURL, error) in
+        _ = BitlyClient.shorten(url: url, username: username, apiKey: apiKey) { (shortenedURL, error) in
             XCTAssertNotNil(shortenedURL)
             XCTAssertNil(error)
             _ = BitlyClient.expand(shortenedURL, username: self.username, apiKey: self.apiKey, completionHandler: { (expandedURL, error) in
@@ -62,13 +68,18 @@ class BitlyTests: XCTestCase {
     }
 
     func testAccessTokenShrinkAndExpand() {
+        guard let accessToken = accessToken else {
+                XCTFail()
+                return
+        }
+
         let expectation = self.expectation(description: "Bitly")
         let url = URL(string: "https://encrypted.google.com/search?hl=en&q=bitly")
 
         _ = BitlyClient.shorten(url, accessToken: accessToken) { (shortenedURL, error) in
             XCTAssertNotNil(shortenedURL)
             XCTAssertNil(error)
-            _ = BitlyClient.expand(shortenedURL, accessToken: self.accessToken, completionHandler: { (expandedURL, error) in
+            _ = BitlyClient.expand(url: shortenedURL, accessToken: self.accessToken, completionHandler: { (expandedURL, error) in
                 XCTAssertNotNil(expandedURL)
                 XCTAssertNil(error)
                 expectation.fulfill()

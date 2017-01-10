@@ -25,6 +25,16 @@
 		26DF14231E21F7C5002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
 		26DF14241E21F7C6002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
 		26DF14251E21F7C7002ED3E2 /* BitlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */; };
+		26DF14391E23F9E5002ED3E2 /* BitlyTestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF14381E23F9E5002ED3E2 /* BitlyTestClient.swift */; };
+		26DF143B1E23FB69002ED3E2 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF143A1E23FB69002ED3E2 /* JSONLoader.swift */; };
+		26DF143D1E240273002ED3E2 /* shorten-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF14281E23F6EE002ED3E2 /* shorten-good.json */; };
+		26DF143E1E240273002ED3E2 /* shorten-missing-access-token.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF14341E23F877002ED3E2 /* shorten-missing-access-token.json */; };
+		26DF143F1E240273002ED3E2 /* shorten-missing-args.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF14311E23F79B002ED3E2 /* shorten-missing-args.json */; };
+		26DF14401E240273002ED3E2 /* shorten-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF142C1E23F729002ED3E2 /* shorten-bad.json */; };
+		26DF14411E240273002ED3E2 /* expand-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF142B1E23F729002ED3E2 /* expand-good.json */; };
+		26DF14421E240273002ED3E2 /* expand-missing-access-token.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF14351E23F877002ED3E2 /* expand-missing-access-token.json */; };
+		26DF14431E240273002ED3E2 /* expand-missing-args.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF14301E23F79B002ED3E2 /* expand-missing-args.json */; };
+		26DF14441E240273002ED3E2 /* expand-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26DF142A1E23F729002ED3E2 /* expand-bad.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +103,16 @@
 		26DF13E91E21F66A002ED3E2 /* BitlyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitlyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DF14121E21F6A5002ED3E2 /* BitlyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitlyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DF14201E21F7B4002ED3E2 /* BitlyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitlyClient.swift; path = Source/BitlyClient.swift; sourceTree = SOURCE_ROOT; };
+		26DF14281E23F6EE002ED3E2 /* shorten-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shorten-good.json"; sourceTree = "<group>"; };
+		26DF142A1E23F729002ED3E2 /* expand-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "expand-bad.json"; sourceTree = "<group>"; };
+		26DF142B1E23F729002ED3E2 /* expand-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "expand-good.json"; sourceTree = "<group>"; };
+		26DF142C1E23F729002ED3E2 /* shorten-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shorten-bad.json"; sourceTree = "<group>"; };
+		26DF14301E23F79B002ED3E2 /* expand-missing-args.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "expand-missing-args.json"; sourceTree = "<group>"; };
+		26DF14311E23F79B002ED3E2 /* shorten-missing-args.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shorten-missing-args.json"; sourceTree = "<group>"; };
+		26DF14341E23F877002ED3E2 /* shorten-missing-access-token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shorten-missing-access-token.json"; sourceTree = "<group>"; };
+		26DF14351E23F877002ED3E2 /* expand-missing-access-token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "expand-missing-access-token.json"; sourceTree = "<group>"; };
+		26DF14381E23F9E5002ED3E2 /* BitlyTestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitlyTestClient.swift; sourceTree = "<group>"; };
+		26DF143A1E23FB69002ED3E2 /* JSONLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				2696C0011E1DE2BD003220F6 /* Bitly */,
-				2696C0161E1DE2BD003220F6 /* BitlyTests */,
 				2696C0281E1DE2D7003220F6 /* BitlyKit */,
+				2696C0161E1DE2BD003220F6 /* BitlyTests */,
 				2696C0351E1DE2D7003220F6 /* BitlyKitTests */,
 				2696C0001E1DE2BD003220F6 /* Products */,
 			);
@@ -210,10 +230,36 @@
 		2696C0351E1DE2D7003220F6 /* BitlyKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				2696C0361E1DE2D7003220F6 /* BitlyKitTests.swift */,
+				26DF14271E23F6D7002ED3E2 /* Data */,
+				26DF143C1E24000D002ED3E2 /* Helpers */,
 				2696C0381E1DE2D7003220F6 /* Info.plist */,
+				2696C0361E1DE2D7003220F6 /* BitlyKitTests.swift */,
 			);
 			path = BitlyKitTests;
+			sourceTree = "<group>";
+		};
+		26DF14271E23F6D7002ED3E2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				26DF14281E23F6EE002ED3E2 /* shorten-good.json */,
+				26DF14341E23F877002ED3E2 /* shorten-missing-access-token.json */,
+				26DF14311E23F79B002ED3E2 /* shorten-missing-args.json */,
+				26DF142C1E23F729002ED3E2 /* shorten-bad.json */,
+				26DF142B1E23F729002ED3E2 /* expand-good.json */,
+				26DF14351E23F877002ED3E2 /* expand-missing-access-token.json */,
+				26DF14301E23F79B002ED3E2 /* expand-missing-args.json */,
+				26DF142A1E23F729002ED3E2 /* expand-bad.json */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		26DF143C1E24000D002ED3E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				26DF14381E23F9E5002ED3E2 /* BitlyTestClient.swift */,
+				26DF143A1E23FB69002ED3E2 /* JSONLoader.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +532,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DF14411E240273002ED3E2 /* expand-good.json in Resources */,
+				26DF143E1E240273002ED3E2 /* shorten-missing-access-token.json in Resources */,
+				26DF14431E240273002ED3E2 /* expand-missing-args.json in Resources */,
+				26DF14441E240273002ED3E2 /* expand-bad.json in Resources */,
+				26DF143D1E240273002ED3E2 /* shorten-good.json in Resources */,
+				26DF143F1E240273002ED3E2 /* shorten-missing-args.json in Resources */,
+				26DF14421E240273002ED3E2 /* expand-missing-access-token.json in Resources */,
+				26DF14401E240273002ED3E2 /* shorten-bad.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +615,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2696C0371E1DE2D7003220F6 /* BitlyKitTests.swift in Sources */,
+				26DF14391E23F9E5002ED3E2 /* BitlyTestClient.swift in Sources */,
+				26DF143B1E23FB69002ED3E2 /* JSONLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

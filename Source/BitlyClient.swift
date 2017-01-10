@@ -62,16 +62,35 @@ public enum BitlyError : Int {
             return "Failure to expand URL."
         case .unexpectedResponse:
             return "Unexpected response."
-        case .unknownError:
-            return "Unknown error."
         case .apiError:
             return "API error."
+        case .unknownError:
+            return "Unknown error."
         }
     }
+
+    static func errorType(error: Error?) -> BitlyError {
+        let errorCode = (error as? NSError)?.code ?? BitlyError.unknownError.errorCode
+        switch errorCode {
+        case BitlyError.incompleteParameters.errorCode:
+            return .incompleteParameters
+        case BitlyError.failureToShortenURL.errorCode:
+            return .failureToShortenURL
+        case BitlyError.failureToExpandURL.errorCode:
+            return .failureToExpandURL
+        case BitlyError.unexpectedResponse.errorCode:
+            return .unexpectedResponse
+        case BitlyError.apiError.errorCode:
+            return .apiError
+        default:
+            return .unknownError
+        }
+    }
+
 }
 
 /// Bitly Client for shortening and expanding URLs.
-public final class BitlyClient : NSObject {
+open class BitlyClient : NSObject {
 
     // MARK: - Public -
 
@@ -111,7 +130,7 @@ public final class BitlyClient : NSObject {
     ///   - apiKey: api key
     ///   - completionHandler: completion handler
     /// - Returns: task
-    public class func shorten(_ url: URL?, username: String?, apiKey: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    public class func shorten(url: URL?, username: String?, apiKey: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
         guard let completionHandler = completionHandler else {
             return nil
         }
@@ -140,7 +159,7 @@ public final class BitlyClient : NSObject {
     ///   - accessToken: access token
     ///   - completionHandler: completion handler
     /// - Returns: task
-    public class func expand(_ url: URL?, accessToken: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    public class func expand(url: URL?, accessToken: String?, completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
         guard let completionHandler = completionHandler else {
             return nil
         }
@@ -202,7 +221,7 @@ public final class BitlyClient : NSObject {
             fatalError("API URL must be defined.")
         }
 
-        return fetchJsonRequest(with: apiURL, parameters: parameters) { (json, error) in
+        return fetchJsonRequest(url: apiURL, parameters: parameters) { (json, error) in
             if error != nil {
                 let error = prepareError(bitlyError: .failureToShortenURL, reason: error?.localizedDescription)
                 completionHandler(nil, error)
@@ -226,7 +245,7 @@ public final class BitlyClient : NSObject {
                     completionHandler(nil, error)
                 }
                 else {
-                    completionHandler(nil, prepareError(bitlyError: .unknownError))
+                    completionHandler(nil, prepareError(bitlyError: .unexpectedResponse))
                 }
             }
         }
@@ -243,7 +262,7 @@ public final class BitlyClient : NSObject {
             fatalError("API URL must be defined.")
         }
 
-        return fetchJsonRequest(with: apiURL, parameters: parameters) { (json, error) in
+        return fetchJsonRequest(url: apiURL, parameters: parameters) { (json, error) in
             if error != nil {
                 let error = prepareError(bitlyError: .failureToExpandURL)
                 completionHandler(nil, error)
@@ -267,7 +286,7 @@ public final class BitlyClient : NSObject {
                     completionHandler(nil, error)
                 }
                 else {
-                    completionHandler(nil, prepareError(bitlyError: .unknownError))
+                    completionHandler(nil, prepareError(bitlyError: .unexpectedResponse))
                 }
             }
         }
@@ -284,7 +303,7 @@ public final class BitlyClient : NSObject {
         return prepareError(bitlyError: .apiError, reason: reason)
     }
 
-    internal class func fetchJsonRequest(with url: URL, parameters: [AnyHashable : Any], completionHandler: ((Any?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
+    internal class func fetchJsonRequest(url: URL, parameters: [AnyHashable : Any], completionHandler: ((Any?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
         guard let completionHandler = completionHandler else {
             return nil
         }
