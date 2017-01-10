@@ -1,0 +1,94 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+			"name": "API-Flow imports",
+			"folders": [],
+			"requests": [
+				{
+					"id": "d32adb5c-6e34-4e1a-9b09-4d5330f8b345",
+					"url": "https://api-ssl.bitly.com/v3/shorten?longUrl=https://en.wikipedia.org/wiki/Richard_Feynman&format=json&access_token=***** Hidden credentials *****",
+					"method": "GET",
+					"collectionId": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+					"name": "Shorten URL Request",
+					"description": "",
+					"headers": "",
+					"dataMode": "raw",
+					"data": ""
+				},
+				{
+					"id": "2283aa76-6a7c-425b-82e9-b2c54586e5bf",
+					"url": "https://api-ssl.bitly.com/v3/shorten?longUrl=https://en.wikipedia.org/wiki/Richard_Feynman&format=json&access_token=",
+					"method": "GET",
+					"collectionId": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+					"name": "Shorten URL Request (Missing Access Token)",
+					"description": "",
+					"headers": "",
+					"dataMode": "raw",
+					"data": ""
+				},
+				{
+					"id": "2e646af3-6f7a-4705-ab40-0e11f1457a12",
+					"url": "https://api-ssl.bitly.com/v3/shorten?access_token=***** Hidden credentials *****",
+					"method": "GET",
+					"collectionId": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+					"name": "Shorten URL Request (Missing Args)",
+					"description": "",
+					"headers": "",
+					"dataMode": "raw",
+					"data": ""
+				},
+				{
+					"id": "fed3188b-77d5-456c-a586-7830e1e7822f",
+					"url": "https://api-ssl.bitly.com/v3/expand?access_token=***** Hidden credentials *****&format=json&shortUrl=http://sstools.co/2iWad1L",
+					"method": "GET",
+					"collectionId": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+					"name": "Expand URL Request",
+					"description": "",
+					"headers": "",
+					"dataMode": "raw",
+					"data": ""
+				},
+				{
+					"id": "789c4faa-fa46-4a57-ae0d-a01be501dd57",
+					"url": "https://api-ssl.bitly.com/v3/expand?access_token=&format=json&shortUrl=http://sstools.co/2iWad1L",
+					"method": "GET",
+					"collectionId": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+					"name": "Expand URL Request (Missing Access Token)",
+					"description": "",
+					"headers": "",
+					"dataMode": "raw",
+					"data": ""
+				},
+				{
+					"id": "8df1bd39-2717-4650-a494-f2a42594242f",
+					"url": "https://api-ssl.bitly.com/v3/expand?access_token=***** Hidden credentials *****",
+					"method": "GET",
+					"collectionId": "55b1ac4a-d5bd-4255-914d-6abb26c69c1c",
+					"name": "Expand URL Request (Missing Args)",
+					"description": "",
+					"headers": "",
+					"dataMode": "raw",
+					"data": ""
+				}
+			],
+			"order": [
+				"d32adb5c-6e34-4e1a-9b09-4d5330f8b345",
+				"2283aa76-6a7c-425b-82e9-b2c54586e5bf",
+				"2e646af3-6f7a-4705-ab40-0e11f1457a12",
+				"fed3188b-77d5-456c-a586-7830e1e7822f",
+				"789c4faa-fa46-4a57-ae0d-a01be501dd57",
+				"8df1bd39-2717-4650-a494-f2a42594242f"
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "b81d7d76-72ea-4fe8-8962-78f8323adcde",
+			"name": "API-Flow Imports",
+			"values": [],
+			"timestamp": 1484066559449
+		}
+	]
+}
