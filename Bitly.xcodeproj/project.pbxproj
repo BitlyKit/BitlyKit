@@ -1128,6 +1128,7 @@
 				26DF13B71E21F61C002ED3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26DF13FA1E21F66A002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -1136,6 +1137,7 @@
 				26DF13FC1E21F66A002ED3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26DF14171E21F6A5002ED3E2 /* Build configuration list for PBXNativeTarget "BitlyKit-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -1144,6 +1146,7 @@
 				26DF14191E21F6A5002ED3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
