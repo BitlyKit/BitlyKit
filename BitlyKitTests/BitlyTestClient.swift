@@ -11,6 +11,7 @@ import Foundation
 
 class BitlyTestClient: BitlyClient {
 
+    static var delay: TimeInterval = 0.0
     static var json: Any?
     static var error: Error?
 
@@ -19,15 +20,17 @@ class BitlyTestClient: BitlyClient {
             return nil
         }
 
-        if let json = json {
-            completionHandler(json, nil)
-        }
-        else if let error = error {
-            completionHandler(nil, error)
-        }
-        else {
-            let error = prepareError(bitlyError: .unknownError)
-            completionHandler(nil, error)
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
+            if let json = json {
+                completionHandler(json, nil)
+            }
+            else if let error = error {
+                completionHandler(nil, error)
+            }
+            else {
+                let error = prepareError(bitlyError: .unknownError)
+                completionHandler(nil, error)
+            }
         }
 
         // it is not necessary to return a real task for tests

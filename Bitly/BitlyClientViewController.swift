@@ -16,7 +16,6 @@ let UserDefaultURL = "url"
 
 class BitlyClientViewController: UIViewController {
 
-
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var apiKeyTextField: UITextField!
     @IBOutlet weak var accessTokenTextField: UITextField!

@@ -214,10 +214,7 @@ open class BitlyClient : NSObject {
 
     // MARK: - Private -
 
-    private class func shorten(url: URL, parameters: [AnyHashable : Any], completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
-        guard let completionHandler = completionHandler else {
-            return nil
-        }
+    private class func shorten(url: URL, parameters: [AnyHashable : Any], completionHandler: @escaping ((URL?, Error?) -> Swift.Void)) -> URLSessionTask? {
 
         let urlString = "\(BitlyBaseURL)\(BitlyShortenPath)"
         guard let apiURL = URL(string: urlString) else {
@@ -254,12 +251,7 @@ open class BitlyClient : NSObject {
         }
     }
 
-    private class func expand(url: URL, parameters: [AnyHashable : Any], completionHandler: ((URL?, Error?) -> Swift.Void)? = nil) -> URLSessionTask? {
-
-        guard let completionHandler = completionHandler else {
-            return nil
-        }
-
+    private class func expand(url: URL, parameters: [AnyHashable : Any], completionHandler: @escaping ((URL?, Error?) -> Swift.Void)) -> URLSessionTask? {
         let urlString = "\(BitlyBaseURL)\(BitlyExpandPath)"
         guard let apiURL = URL(string: urlString) else {
             fatalError("API URL must be defined.")

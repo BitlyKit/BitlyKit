@@ -24,6 +24,7 @@ class BitlyKitTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
 
+        BitlyTestClient.delay = 0.0
         BitlyTestClient.json = nil
         BitlyTestClient.error = nil
     }
@@ -64,6 +65,7 @@ class BitlyKitTests: XCTestCase {
         }
 
         let expectation = self.expectation(description: "Bitly")
+        BitlyTestClient.delay = 2.0
         BitlyTestClient.json = json
         _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(url)
@@ -207,6 +209,7 @@ class BitlyKitTests: XCTestCase {
         }
 
         let expectation = self.expectation(description: "Bitly")
+        BitlyTestClient.delay = 2.0
         BitlyTestClient.json = json
         _ = BitlyTestClient.expand(url: fakeShortURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(url)
