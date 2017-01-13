@@ -241,7 +241,6 @@ open class BitlyClient : NSObject {
                     completionHandler(shortenedURL, nil)
                 }
                 else if let error = extractAPIError(jsonDictionary: jsonDictionary) {
-                    debugPrint("JSON: \(jsonDictionary)")
                     completionHandler(nil, error)
                 }
                 else {
@@ -296,7 +295,6 @@ open class BitlyClient : NSObject {
             return nil
         }
         let reason = "\(statusText) (\(statusCode)))"
-        debugPrint("Reason: \(reason)")
         return prepareError(bitlyError: .apiError, reason: reason)
     }
 
@@ -305,9 +303,7 @@ open class BitlyClient : NSObject {
             return nil
         }
 
-        debugPrint("Parameters: \(parameters)")
-
-        guard let url = appendQueryParameters(parameters: parameters, to: url) else {
+        guard let url = appendQueryParameters(parameters: parameters, url: url) else {
             fatalError("URL must be defined.")
         }
 
@@ -346,11 +342,9 @@ open class BitlyClient : NSObject {
         return task
     }
 
-    internal class func appendQueryParameters(parameters: [AnyHashable : Any], to url: URL) -> URL? {
-        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            return nil
-        }
-        components.queryItems = parameters.flatMap { (name, value) in
+    internal class func appendQueryParameters(parameters: [AnyHashable : Any], url: URL) -> URL? {
+        let components = NSURLComponents(url: url, resolvingAgainstBaseURL: false)
+        components?.queryItems = parameters.flatMap { (name, value) in
             if let name = name as? String {
                 let value = String(describing: value)
                 return URLQueryItem(name: name, value: value)
@@ -358,7 +352,7 @@ open class BitlyClient : NSObject {
             return nil
         }
 
-        return components.url
+        return components?.url
     }
 
     internal class func prepareError(bitlyError: BitlyError, reason: String? = nil, description: String? = nil) -> NSError {

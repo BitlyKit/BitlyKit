@@ -11,6 +11,7 @@ import XCTest
 
 class BitlyKitTests: XCTestCase {
 
+    let baseURL = URL(string: "http://www.bitly.com")!
     let fakeLongURL = URL(string: "http://www.apple.com/car")!
     let fakeShortURL = URL(string: "http://bit.ly/ab123")!
     let fakeAccessToken = "abc123xyz789"
@@ -56,6 +57,32 @@ class BitlyKitTests: XCTestCase {
         XCTAssertEqual(expandStatusText, BitlyStatusOK)
     }
 
+    // MARK: - Request Tests -
+
+    func testAppendingStringQueryParametersToURL() {
+        let parameters = ["name" : "bitly"]
+        let requestURL = BitlyClient.appendQueryParameters(parameters: parameters, url: baseURL)
+        XCTAssertNotNil(requestURL)
+        if let query = requestURL?.query {
+            XCTAssertTrue(query.contains("name=bitly"))
+        }
+        else {
+            XCTFail()
+        }
+    }
+
+    func testAppendingNumberQueryParametersToURL() {
+        let parameters = ["year" : 2017]
+        let requestURL = BitlyClient.appendQueryParameters(parameters: parameters, url: baseURL)
+        XCTAssertNotNil(requestURL)
+        if let query = requestURL?.query {
+            XCTAssertTrue(query.contains("year=2017"))
+        }
+        else {
+            XCTFail()
+        }
+    }
+
     // MARK: - Shorten Tests -
 
     func testShortenGoodJSON() {
@@ -65,7 +92,7 @@ class BitlyKitTests: XCTestCase {
         }
 
         let expectation = self.expectation(description: "Bitly")
-        BitlyTestClient.delay = 2.0
+        BitlyTestClient.delay = 0.25
         BitlyTestClient.json = json
         _ = BitlyTestClient.shorten(url: fakeLongURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(url)
@@ -209,7 +236,7 @@ class BitlyKitTests: XCTestCase {
         }
 
         let expectation = self.expectation(description: "Bitly")
-        BitlyTestClient.delay = 2.0
+        BitlyTestClient.delay = 0.25
         BitlyTestClient.json = json
         _ = BitlyTestClient.expand(url: fakeShortURL, accessToken: fakeAccessToken) { (url, error) in
             XCTAssertNotNil(url)
