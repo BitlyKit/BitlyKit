@@ -69,6 +69,10 @@ public enum BitlyError : Int {
         }
     }
 
+    /// Error type for a given error.
+    ///
+    /// - Parameter error: error
+    /// - Returns: error type
     public static func errorType(error: Error?) -> BitlyError {
         let errorCode = (error as? NSError)?.code ?? BitlyError.unknownError.errorCode
         switch errorCode {
