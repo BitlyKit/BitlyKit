@@ -9,10 +9,17 @@
 import UIKit
 import BitlyKit
 
+// User Defaults
 let UserDefaultUsername = "username"
 let UserDefaultApiKey = "apiKey"
 let UserDefaultAccessToken = "accessToken"
 let UserDefaultURL = "url"
+
+// Environment Variables
+let EnvironmentUsernameKey = "Username"
+let EnvironmentApiKeyKey = "ApiKey"
+let EnvironmentAccessTokenKey = "AccessToken"
+let EnvironmentURLKey = "URL"
 
 class BitlyClientViewController: UIViewController {
 
@@ -59,10 +66,23 @@ class BitlyClientViewController: UIViewController {
     // MARK: - Private Methods -
 
     private func loadSettings() {
-        usernameTextField.text = UserDefaults.standard.object(forKey: UserDefaultUsername) as? String
-        apiKeyTextField.text = UserDefaults.standard.object(forKey: UserDefaultApiKey) as? String
-        accessTokenTextField.text = UserDefaults.standard.object(forKey: UserDefaultAccessToken) as? String
-        urlTextField.text = UserDefaults.standard.object(forKey: UserDefaultURL) as? String
+        // get values from environemtn variables if available
+        if let username = ProcessInfo.processInfo.environment[EnvironmentUsernameKey],
+            let apiKey = ProcessInfo.processInfo.environment[EnvironmentApiKeyKey],
+            let accessToken = ProcessInfo.processInfo.environment[EnvironmentAccessTokenKey],
+            let url = ProcessInfo.processInfo.environment[EnvironmentURLKey] {
+
+            usernameTextField.text = username
+            apiKeyTextField.text = apiKey
+            accessTokenTextField.text = accessToken
+            urlTextField.text = url
+        }
+        else {
+            usernameTextField.text = UserDefaults.standard.object(forKey: UserDefaultUsername) as? String
+            apiKeyTextField.text = UserDefaults.standard.object(forKey: UserDefaultApiKey) as? String
+            accessTokenTextField.text = UserDefaults.standard.object(forKey: UserDefaultAccessToken) as? String
+            urlTextField.text = UserDefaults.standard.object(forKey: UserDefaultURL) as? String
+        }
     }
 
     private func saveSettings() {
